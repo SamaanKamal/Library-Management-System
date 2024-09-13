@@ -48,6 +48,22 @@ public class Book {
         return isAvailable;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setPublicationDate(Date publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
     @Override
     public String toString() {
         return "Book[Title: " + title + ", Author: " + author + ", ISBN: " + ISBN + ", Available: " + isAvailable + "]";
