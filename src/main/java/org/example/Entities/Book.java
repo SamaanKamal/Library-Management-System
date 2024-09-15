@@ -5,20 +5,20 @@ public class Book {
     private String title;
     private String author;
     private String ISBN;
-    private Date publicationDate;
+    private String publicationDate;
     private boolean isAvailable;
 
     public Book() {
     }
 
-    public Book(String title, String author, String ISBN, Date publicationDate, boolean isAvailable) {
+    public Book(String title, String author, String ISBN, String publicationDate) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
         this.publicationDate = publicationDate;
-        this.isAvailable = isAvailable;
+        this.isAvailable = true;
     }
-    public void updateBookDetails(String title, String author, Date publicationDate) {
+    public void updateBookDetails(String title, String author, String publicationDate) {
         this.title = title;
         this.author = author;
         this.publicationDate = publicationDate;
@@ -40,7 +40,7 @@ public class Book {
         return ISBN;
     }
 
-    public Date getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 
@@ -60,7 +60,7 @@ public class Book {
         this.ISBN = ISBN;
     }
 
-    public void setPublicationDate(Date publicationDate) {
+    public void setPublicationDate(String publicationDate) {
         this.publicationDate = publicationDate;
     }
 

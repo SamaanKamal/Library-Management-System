@@ -1,5 +1,6 @@
 package org.example.Entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
@@ -11,17 +12,18 @@ public class Member {
     public Member() {
     }
 
-    public Member(String name, String membershipID, String contactInfo, List<Book> borrowedBooks) {
+    public Member(String name, String membershipID, String contactInfo) {
         this.name = name;
         this.membershipID = membershipID;
         this.contactInfo = contactInfo;
-        this.borrowedBooks = borrowedBooks;
+        borrowedBooks=new ArrayList<>();
     }
 
     public void borrowBook(Book book) {
         if (book.isAvailable()) {
             borrowedBooks.add(book);
             book.setAvailable(false);
+            System.out.println("Book borrowed: " + book.getTitle());
         } else {
             System.out.println("Book is not available.");
         }
@@ -31,6 +33,7 @@ public class Member {
         if (borrowedBooks.contains(book)) {
             borrowedBooks.remove(book);
             book.setAvailable(true);
+            System.out.println("Book returned: " + book.getTitle());
         } else {
             System.out.println("This member didn't borrow this book.");
         }
